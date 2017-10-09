@@ -4,6 +4,12 @@ Import in your IDE as maven project.
 Run MarsRoverApplication.java
 
 
+## Tools and Technologies
+
+1. Java
+2. Java Point API (https://docs.oracle.com/javase/8/docs/api/java/awt/Point.html)
+3. Google guaua table (https://google.github.io/guava/releases/19.0/api/docs/com/google/common/collect/Table.html)
+
 # Mars Rover Problem
 
 
