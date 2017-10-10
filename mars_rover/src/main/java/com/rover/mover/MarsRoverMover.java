@@ -12,8 +12,21 @@ import com.rover.entities.Direction;
 import com.rover.entities.Rover;
 import com.rover.exception.CordinatesOutOfBoundriesException;
 
+/**
+ * Helper to move rover
+ * @author aditiphadke
+ *
+ */
 public class MarsRoverMover {
-
+	
+	private MarsRoverMover(){
+	}
+	
+	private static final MarsRoverMover INSTANCE = new MarsRoverMover();
+	
+	public static MarsRoverMover getInstance(){
+		return INSTANCE;
+	}
 	private static final Logger LOGGER = LoggerFactory.getLogger(MarsRoverMover.class);
 
 	public void setPositions(Rover rover, String[] positions) throws CordinatesOutOfBoundriesException {

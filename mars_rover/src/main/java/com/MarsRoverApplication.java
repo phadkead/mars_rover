@@ -10,11 +10,11 @@ import com.rover.mover.MarsRoverMover;
 public class MarsRoverApplication {
 
 	public static void main(String[] args) {
-		MarsRoverMover mover = new MarsRoverMover();
+		MarsRoverMover mover = MarsRoverMover.getInstance();
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		scanner.useDelimiter(" ");
-		Rover rover = Rover.getInstance();
+		Point limit = new Point();
 		while (true) {
 			System.out.println("Enter upper-right coordinates in format of: x y ");
 			String[] cordinates = scanner.nextLine().split(" ");
@@ -23,11 +23,13 @@ public class MarsRoverApplication {
 			if (upperX <= 0 || upperY <= 0) {
 				System.out.println("Please enter valid upper-right coordinates");
 			} else {
-				rover.setLimit(new Point(upperX, upperY));
+				limit = new Point(upperX, upperY);
 				break;
 			}
 		}
 		while (true) {
+			Rover rover = new Rover();
+			rover.setLimit(limit);
 			try {
 				System.out.println("Enter rover's current position in format of: X Y N");
 				String[] currentPosition = scanner.nextLine().split(" ");

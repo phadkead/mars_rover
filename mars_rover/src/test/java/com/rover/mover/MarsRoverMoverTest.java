@@ -19,7 +19,7 @@ import com.rover.exception.CordinatesOutOfBoundriesException;
 
 public class MarsRoverMoverTest {
 
-	private MarsRoverMover marsrover = new MarsRoverMover();
+	private MarsRoverMover marsrover = MarsRoverMover.getInstance();
 
 //	@Before
 //	public void setup() {
@@ -43,7 +43,7 @@ public class MarsRoverMoverTest {
 	public void shouldProcessDirections() throws CordinatesOutOfBoundriesException {
 		// given
 		String[] directions = new String[] { "L", "M" };
-		Rover rover = Rover.getInstance();
+		Rover rover = new Rover();
 		rover.setCoordinates(new Point(1, 2));
 		rover.setDirection( N);
 		rover.setLimit(new Point(10, 10));
@@ -56,7 +56,7 @@ public class MarsRoverMoverTest {
 
 		// given
 		String[] directions1 = new String[] { "R", "M", "M", "R" };
-		Rover rover1 = Rover.getInstance();
+		Rover rover1 = new Rover();
 		rover1.setCoordinates(new Point(1, 3));
 		rover1.setDirection( N);
 		
@@ -73,7 +73,7 @@ public class MarsRoverMoverTest {
 	public void shouldPointToCorrectDirection() {
 
 		// given
-		Rover rover = Rover.getInstance();
+		Rover rover = new Rover();
 		rover.setCoordinates(new Point(1, 2));
 		rover.setDirection( N);
 		// when
@@ -135,7 +135,7 @@ public class MarsRoverMoverTest {
 	@Test
 	public void shouldProcessMoveCommandInAllDirections() throws CordinatesOutOfBoundriesException {
 		// given
-		Rover rover = Rover.getInstance();
+		Rover rover = new Rover();
 		rover.setCoordinates(new Point(1, 2));
 		rover.setLimit(new Point(10, 10));
 		rover.setDirection(N);
@@ -173,7 +173,7 @@ public class MarsRoverMoverTest {
 	@Test(expected = CordinatesOutOfBoundriesException.class)
 	public void shouldNotGoOutOfBoundries() throws CordinatesOutOfBoundriesException {
 		// given
-		Rover rover = Rover.getInstance();
+		Rover rover = new Rover();
 		rover.setCoordinates(new Point(10, 10));
 		rover.setLimit(new Point(10, 10));
 		rover.setDirection(N);

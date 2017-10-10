@@ -9,23 +9,13 @@ import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 
 /**
- * Represents Plateau's position
+ * Represents Rover's position
  * 
  * @author aditiphadke
  *
  */
 public class Rover {
 
-	private static final Rover instance = new Rover();
-	
-	private Rover(){
-		
-	}
-	
-	public static Rover getInstance(){
-		return instance;
-	}
-	
 	/** current x,y cordinates */
 	private Point coordinates;
 
